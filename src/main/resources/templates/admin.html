@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Administrador - Mercado Incaico</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+        <div class="container">
+        <aside class="sidebar" id="menu" style="display: none;">
+            <h2>Administrador</h2>
+            <ul>
+                <li><a href="gestion_ventas.html">Gestión de Ventas</a></li>
+                <li><a href="gestion_compras.html">Gestión de Compras</a></li>
+                <li><a href="gestion_almacen.html">Gestión de Almacén</a></li>
+                <li><a href="gestion_reclamos.html">Gestión de Reclamos</a></li>
+            </ul>
+        </aside>
+        <main class="content">
+            <header>
+                <h1>Panel de Administración</h1>
+            </header>
+            
+            <section id="login">
+                <h2>Iniciar Sesión</h2>
+                <form id="loginForm">
+                    <label for="usuario">Usuario:</label>
+                    <input type="text" id="usuario" required>
+                    <label for="password">Contraseña:</label>
+                    <input type="password" id="password" required>
+                    <button type="submit">Ingresar</button>
+                </form>
+            </section>
+            
+            <section id="dashboard" style="display: none;">
+                <h2>Bienvenido, Administrador</h2>
+                <p>Seleccione una opción del menú para gestionar el sistema.</p>
+            </section>
+            
+            <footer>
+                <p>&copy; 2025 MERCADO INCAICO. Todos los derechos reservados.</p>
+            </footer>
+        </main>
+    </div>
+
+  <!--  <script>
+        document.getElementById('loginForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            var usuario = document.getElementById('usuario').value;
+            var password = document.getElementById('password').value;
+            
+            if (usuario === 'ADMIN' && password === 'ADMIN') {
+                document.getElementById('login').style.display = 'none';
+                document.getElementById('dashboard').style.display = 'block';
+                document.getElementById('menu').style.display = 'block';
+            } else {
+                alert('Credenciales incorrectas');
+            }
+        });
+    </script>
+--></body>
+</html>

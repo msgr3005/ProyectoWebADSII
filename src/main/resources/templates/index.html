@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MERCADO INCAICO</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <button onclick="window.location.href='admin.html'" style="position: absolute; top: 20px; right: 20px; padding: 10px ">ADMINISTRADOR</button>
+    </header>
+    <div class="container">
+        <aside class="sidebar">
+            <h2>Categorías</h2>
+            <ul>
+                <li><a href="#">Granos y Cereales</a></li>
+                <li><a href="#">Bebidas</a></li>
+                <li><a href="#">Dulces y Snacks</a></li>
+                <li><a href="#">Lácteos</a></li>
+                <li><a href="#">Enlatados</a></li>
+            </ul>       
+            <div class="search-box">
+                <input type="text" placeholder="Buscar productos...">
+                <button>Buscar</button>
+            </div>
+        </aside>
+        <main class="content">
+            <header>
+                <h1>MERCADO INCAICO</h1>
+                <nav>
+                    <ul>
+                        <li><a href="#inicio">Inicio</a></li>
+                        <li><a href="#productos">Productos</a></li>
+                        <li><a href="#contacto">Contacto</a></li>
+                    </ul>
+                </nav>
+            </header>
+            
+            <section id="inicio">
+                <h2>Bienvenidos a MERCADO INCAICO</h2>
+                <p>Ofrecemos los mejores precios en abarrotes para ventas al por mayor y menor.</p>
+            </section>
+            
+            <section id="productos">
+                <h2>Nuestros Productos</h2>
+                <div class="producto">
+                    <img src="producto1.jpg" alt="Producto 1">
+                    <h3>Producto 1</h3>
+                    <p>Descripción breve del producto.</p>
+                    <button>Comprar</button>
+                </div>
+                <div class="producto">
+                    <img src="producto2.jpg" alt="Producto 2">
+                    <h3>Producto 2</h3>
+                    <p>Descripción breve del producto.</p>
+                    <button>Comprar</button>
+                </div>
+            </section>
+            
+            <section id="contacto">
+                <h2>Contáctanos</h2>
+                <p>Teléfono: 123-456-789</p>
+                <p>Email: contacto@mercadoincaico.com</p>
+            </section>
+            
+            <footer>
+                <p>&copy; 2025 MERCADO INCAICO. Todos los derechos reservados.</p>
+            </footer>
+        </main>
+    </div>
+</body>
+</html>

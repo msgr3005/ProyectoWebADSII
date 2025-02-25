@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MERCADO INCAICO</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <form th:action="@{/auth/registro}" method="post">
+            <label>Usuario:</label>
+            <input type="text" name="username" required>
+        
+            <label>Contraseña:</label>
+            <input type="password" name="password" required>
+        
+            <button type="submit">Registrarse</button>
+        </form>
+    </div>
+</body>
+</html>
