@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Almacén - Mercado Incaico</title>
+    <link rel="stylesheet" href="../static/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+		<a class="navbar-brand" href="">App Inventario</a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse"
+			data-target="#navbarNav" aria-controls="navbarNav"
+			aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse" id="navbarNav">
+			<ul class="navbar-nav">
+				<li class="nav-item"><a class="nav-link" th:href="@{/admin}">Inicio</a></li>
+			</ul>
+		</div>
+	</nav>
+    <div class="container">
+        
+       
+            <header>
+                <h2>Registrar Venta</h2>
+            </header>
+            <!--<form th:action="@{/ventas/guardarVenta}" method="post">
+                        <label for="producto">Producto:</label>
+                        <select name="productoId" id="producto" required>
+                            <option value="">Seleccione un producto</option>
+                            <option th:each="prod : ${productos}" 
+                                    th:value="${prod.id}" 
+                                    th:text="${prod.nombre}">
+                            </option>
+                        </select>
+                        <label for="cantidad">Cantidad:</label>
+                        <input type="number" id="cantidad" name="cantidad" required min="1">
+                    </form>-->
+                    <form th:action="@{/ventas/guardarVenta}" method="post">
+                        <table id="productosTable" class="table">
+                            <thead>
+                                <tr>
+                                    <th>Producto</th>
+                                    <th>Cantidad</th>
+                                    <th>Acción</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <select name="productoId" class="form-control">
+                                            <option th:each="producto : ${productos}" th:value="${producto.id}" th:text="${producto.nombre}"></option>
+                                        </select>
+                                    </td>
+                                    <td>
+                                        <input type="number" name="cantidad" class="form-control" required min="1">
+                                    </td>
+                                    <td>
+                                        <button type="button" class="btn btn-danger" onclick="eliminarFila(this)">Eliminar</button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <button type="button" class="btn btn-primary" onclick="agregarFila()">Añadir Producto</button>
+                        <button type="submit" class="btn btn-success">Registrar Venta</button>
+                    </form>
+                    
+                    <script>
+                        function agregarFila() {
+                            var table = document.getElementById("productosTable").getElementsByTagName('tbody')[0];
+                            var newRow = document.createElement("tr");
+                    
+                            // Crear dinámicamente los elementos HTML en la nueva fila
+                            newRow.innerHTML = `
+                                <td>
+                                    <select name="productoIds" class="form-control">
+                                        <!-- Se rellenará dinámicamente desde Thymeleaf -->
+                                    </select>
+                                </td>
+                                <td>
+                                    <input type="number" name="cantidades" class="form-control" required min="1">
+                                </td>
+                                <td>
+                                    <button type="button" class="btn btn-danger" onclick="eliminarFila(this)">Eliminar</button>
+                                </td>
+                            `;
+                    
+                            // Agregar la nueva fila a la tabla
+                            table.appendChild(newRow);
+                    
+                            // Rellenar el select con opciones de productos existentes
+                            var select = newRow.querySelector("select");
+                            var productos = JSON.parse(document.getElementById("productosJson").textContent);
+                            productos.forEach(producto => {
+                                var option = document.createElement("option");
+                                option.value = producto.id;
+                                option.textContent = producto.nombre;
+                                select.appendChild(option);
+                            });
+                        }
+                    
+                        function eliminarFila(button) {
+                            var row = button.parentNode.parentNode;
+                            row.parentNode.removeChild(row);
+                        }
+                    </script>
+                    
+                    <!-- Convertir productos a JSON para usarlos en JS -->
+                    <script type="application/json" id="productosJson" th:text="${productosJson}"></script>
+                    
+                        
+    </div>
+</body>
+
+</html>
+

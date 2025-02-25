@@ -8,16 +8,16 @@
 </head>
 <body>
         <div class="container">
-        <aside class="sidebar" id="menu" style="display: none;">
+        <aside class="sidebar" id="menu" >
             <h2>Administrador</h2>
             <ul>
-                <li><a href="gestion_ventas.html">Gestión de Ventas</a></li>
-                <li><a href="gestion_compras.html">Gestión de Compras</a></li>
-                <li><a href="gestion_almacen.html">Gestión de Almacén</a></li>
-                <li><a href="gestion_reclamos.html">Gestión de Reclamos</a></li>
+                <li><a th:href="@{/ventas}">Gestión de Ventas</a></li>
+                <li><a th:href="@{/compras}">Gestión de Compras</a></li>
+                <li><a th:href="@{/almacen}">Gestión de Almacén</a></li>
+                <li><a th:href="@{/reclamos}">Gestión de Reclamos</a></li>
             </ul>
         </aside>
-        <main class="content">
+        <!--<main class="content">
             <header>
                 <h1>Panel de Administración</h1>
             </header>
@@ -32,19 +32,19 @@
                     <button type="submit">Ingresar</button>
                 </form>
             </section>
-            
-            <section id="dashboard" style="display: none;">
+        -->
+            <section id="dashboard">
                 <h2>Bienvenido, Administrador</h2>
                 <p>Seleccione una opción del menú para gestionar el sistema.</p>
             </section>
             
-            <footer>
-                <p>&copy; 2025 MERCADO INCAICO. Todos los derechos reservados.</p>
-            </footer>
+            
         </main>
     </div>
-
-  <!--  <script>
+    <footer>
+        <p>&copy; 2025 MERCADO INCAICO. Todos los derechos reservados.</p>
+    </footer>
+  <!--<script>
         document.getElementById('loginForm').addEventListener('submit', function(event) {
             event.preventDefault();
             var usuario = document.getElementById('usuario').value;
@@ -58,6 +58,6 @@
                 alert('Credenciales incorrectas');
             }
         });
-    </script>
---></body>
+    </script>-->
+</body>
 </html>

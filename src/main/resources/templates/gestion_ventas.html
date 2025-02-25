@@ -12,11 +12,10 @@
         <aside class="sidebar">
             <h2>Administrador</h2>
             <ul>
-                <li><a href="gestion_ventas.html">Gestión de Ventas</a></li>
-                <li><a href="gestion_compras.html">Gestión de Compras</a></li>
-                <li><a href="gestion_almacen.html">Gestión de Almacén</a></li>
-                <li><a href="gestion_reclamos.html">Gestión de Reclamos</a></li>
-                <li><a href="admin.html">Volver al Panel</a></li>
+                <li><a th:href="@{/ventas}">Gestión de Ventas</a></li>
+                <li><a th:href="@{/compras}">Gestión de Compras</a></li>
+                <li><a th:href="@{/almacen}">Gestión de Almacén</a></li>
+                <li><a th:href="@{/reclamos}">Gestión de Reclamos</a></li>
             </ul>
         </aside>
         <main class="content">
@@ -26,8 +25,8 @@
             <section>
                 <h2>Administrar Ventas</h2>
                 <p>Gestiona las ventas registradas en el sistema.</p>
-                <button>Agregar Venta</button>
-                <button>Ver Reportes</button>
+                <a th:href="@{/ventas/registrarVenta}">Agregar Venta</a>
+                <a th:href="@{/ventas/listarVentas}">Ver Reportes</a>
             </section>
         </main>
     </div>

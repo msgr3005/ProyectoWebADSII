@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Gestión de Compras - Mercado Incaico</title>
+        <link rel="stylesheet" href="../static/style.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+
+</head>
+<body>
+       
+	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+		<a class="navbar-brand" href="">App Inventario</a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse"
+			data-target="#navbarNav" aria-controls="navbarNav"
+			aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse" id="navbarNav">
+			<ul class="navbar-nav">
+				<li class="nav-item"><a class="nav-link" th:href="@{/admin}">Inicio</a></li>
+			</ul>
+		</div>
+	</nav>
+
+	<div class="container text-center">
+		<div>
+            <h1>Registro de compras</h1>
+			<!--<h1 th:if="${compra.id == null}">Registro de compras</h1>
+			<h1 th:unless="${compra.id == null}">Editar compras</h1>
+        --></div>
+		<form th:action="@{/compras/guardarCompra}" method="post">
+            <label for="proveedor">Proveedor:</label>
+            <select id="proveedor" name="proveedorId" required>
+                <option th:each="proveedor : ${proveedores}" th:value="${proveedor.id}" th:text="${proveedor.nombre}"></option>
+            </select>
+        
+            <label>Productos:</label>
+            <div id="productos-container">
+                <div>
+                    <select name="productoId">
+                        <option th:each="producto : ${productos}" th:value="${producto.id}" th:text="${producto.nombre}"></option>
+                    </select>
+                    <input type="number" name="cantidad" min="1" required>
+                </div>
+            </div>
+        
+            <button type="submit">Registrar Compra</button>
+        </form>
+        
+	</div>
+    <footer>
+        <p>&copy; 2025 MERCADO INCAICO. Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>

@@ -1,14 +1,15 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MERCADO INCAICO</title>
     <link rel="stylesheet" href="style.css">
+    <link th:href="@{/style.css}" rel="stylesheet">
 </head>
 <body>
     <header>
-        <button onclick="window.location.href='admin.html'" style="position: absolute; top: 20px; right: 20px; padding: 10px ">ADMINISTRADOR</button>
+        <a th:href="@{/admin}" style="position: absolute; top: 20px; right: 20px; padding: 10px ">ADMINISTRADOR</a>
     </header>
     <div class="container">
         <aside class="sidebar">
@@ -19,6 +20,9 @@
                 <li><a href="#">Dulces y Snacks</a></li>
                 <li><a href="#">Lácteos</a></li>
                 <li><a href="#">Enlatados</a></li>
+                <li><a href="/web-main/src/main/resources/templates/reclamos/reclamo.html">Registrar Reclamo</a></li>
+                <li><a href="/web-main/src/main/resources/templates/reclamos/lista.html">Ver Reclamos</a></li>
+
             </ul>       
             <div class="search-box">
                 <input type="text" placeholder="Buscar productos...">
@@ -26,16 +30,7 @@
             </div>
         </aside>
         <main class="content">
-            <header>
-                <h1>MERCADO INCAICO</h1>
-                <nav>
-                    <ul>
-                        <li><a href="#inicio">Inicio</a></li>
-                        <li><a href="#productos">Productos</a></li>
-                        <li><a href="#contacto">Contacto</a></li>
-                    </ul>
-                </nav>
-            </header>
+            
             
             <section id="inicio">
                 <h2>Bienvenidos a MERCADO INCAICO</h2>

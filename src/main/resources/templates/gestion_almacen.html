@@ -4,18 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gestión de Almacén - Mercado Incaico</title>
-    <link rel="stylesheet" href="../static/style.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="container">
         <aside class="sidebar">
             <h2>Administrador</h2>
             <ul>
-                <li><a href="gestion_ventas.html">Gestión de Ventas</a></li>
-                <li><a href="gestion_compras.html">Gestión de Compras</a></li>
-                <li><a href="gestion_almacen.html">Gestión de Almacén</a></li>
-                <li><a href="gestion_reclamos.html">Gestión de Reclamos</a></li>
-                <li><a href="admin.html">Volver al Panel</a></li>
+                <li><a th:href="@{/ventas}">Gestión de Ventas</a></li>
+                <li><a th:href="@{/compras}">Gestión de Compras</a></li>
+                <li><a th:href="@{/almacen}">Gestión de Almacén</a></li>
+                <li><a th:href="@{/reclamos}">Gestión de Reclamos</a></li>
             </ul>
         </aside>
         <main class="content">
@@ -25,8 +24,10 @@
             <section>
                 <h2>Administrar Inventario</h2>
                 <p>Gestiona los productos almacenados.</p>
-                <button th:href="@{/inventario}">Ver Inventario</button>
-                <button th:href="@{/registrarProducto}">Registrar Producto</button>
+                <a th:href="@{/almacen/inventario}">Ver Inventario</a>
+                <a th:href="@{/almacen/registrarProducto}">Registrar Producto</a>
+                <a th:href="@{/almacen/categorias}">Lista categorias</a>
+                <a th:href="@{/almacen/registrarCategoria}">Registrar categorias</a>
             </section>
         </main>
     </div>
